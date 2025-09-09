@@ -4,12 +4,17 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -45,7 +50,8 @@ fun GreetingScreen(modifier: Modifier = Modifier) {
         Text(
             text = "Bienvenido al Curso",
             fontSize = 28.sp,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            color = Color.Blue
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -53,7 +59,45 @@ fun GreetingScreen(modifier: Modifier = Modifier) {
         // Subtítulo
         Text(
             text = "Hola, Android!",
-            fontSize = 20.sp
+            fontSize = 20.sp,
+            color = Color.DarkGray
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Row con dos botones
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceAround
+        ) {
+            Button(
+                onClick = { /* Acción aceptar */ },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFF4CAF50), // Verde
+                    contentColor = Color.White
+                )
+            ) {
+                Text("Aceptar")
+            }
+
+            Button(
+                onClick = { /* Acción cancelar */ },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFFF44336), // Rojo
+                    contentColor = Color.White
+                )
+            ) {
+                Text("Cancelar")
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Imagen decorativa
+        Image(
+            painter = painterResource(id = R.drawable.images__1_),
+            contentDescription = "Imagen de ejemplo",
+            modifier = Modifier.size(120.dp)
         )
     }
 }
