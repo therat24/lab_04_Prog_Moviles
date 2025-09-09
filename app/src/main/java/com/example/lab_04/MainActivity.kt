@@ -27,7 +27,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Lab_04Theme {
+                // Componente 1: Scaffold principal
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    // Componente 2: Pantalla de saludo
                     GreetingScreen(
                         modifier = Modifier.padding(innerPadding)
                     )
@@ -39,6 +41,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun GreetingScreen(modifier: Modifier = Modifier) {
+    // Componente 3: Columna principal
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -46,30 +49,31 @@ fun GreetingScreen(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        // Título principal
+
         Text(
             text = "Bienvenido al Curso",
-            fontSize = 28.sp,
+            fontSize = 40.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.DarkGray
+            color = Color.Yellow
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(30.dp))
 
-        // Subtítulo
+
         Text(
             text = "Hola, Android!",
-            fontSize = 20.sp,
-            color = Color.White
+            fontSize = 30.sp,
+            color = Color.Green
         )
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Row con dos botones
+        // Componente 6: Row con dos botones
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceAround
         ) {
+            // Componente 6a: Botón Aceptar
             Button(
                 onClick = { /* Acción aceptar */ },
                 colors = ButtonDefaults.buttonColors(
@@ -80,6 +84,7 @@ fun GreetingScreen(modifier: Modifier = Modifier) {
                 Text("Aceptar")
             }
 
+            // Componente 6b: Botón Cancelar
             Button(
                 onClick = { /* Acción cancelar */ },
                 colors = ButtonDefaults.buttonColors(
@@ -93,7 +98,7 @@ fun GreetingScreen(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Imagen decorativa
+        // Componente 7: Imagen decorativa
         Image(
             painter = painterResource(id = R.drawable.images__1_),
             contentDescription = "Imagen de ejemplo",
