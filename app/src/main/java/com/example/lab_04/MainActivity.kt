@@ -65,7 +65,7 @@ fun GreetingScreen(modifier: Modifier = Modifier) {
 
         // Subtítulo
         Text(
-            text = "Hola, Android!",
+            text = "Hola, Android! // cambio en master",
             fontSize = 30.sp,
             color = SubtitleColor
         )
