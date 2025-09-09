@@ -51,7 +51,7 @@ fun GreetingScreen(modifier: Modifier = Modifier) {
             text = "Bienvenido al Curso",
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.Blue
+            color = Color.DarkGray
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -60,7 +60,7 @@ fun GreetingScreen(modifier: Modifier = Modifier) {
         Text(
             text = "Hola, Android!",
             fontSize = 20.sp,
-            color = Color.DarkGray
+            color = Color.White
         )
 
         Spacer(modifier = Modifier.height(16.dp))
